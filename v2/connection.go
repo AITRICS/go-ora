@@ -7,13 +7,14 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"github.com/sijms/go-ora/v2/advanced_nego"
-	"github.com/sijms/go-ora/v2/converters"
-	"github.com/sijms/go-ora/v2/network"
 	"reflect"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/sijms/go-ora/v2/advanced_nego"
+	"github.com/sijms/go-ora/v2/converters"
+	"github.com/sijms/go-ora/v2/network"
 )
 
 type ConnectionState int
@@ -489,14 +490,14 @@ func (conn *Connection) OpenWithContext(ctx context.Context) error {
 	tracer.Print("Server National Charset: ", conn.tcpNego.ServernCharset)
 	// create string converter object
 	conn.sStrConv = converters.NewStringConverter(conn.tcpNego.ServerCharset)
-	if conn.sStrConv == nil {
-		return fmt.Errorf("the server use charset with id: %d which is not supported by the driver", conn.tcpNego.ServerCharset)
-	}
+	// if conn.sStrConv == nil {
+	// 	return fmt.Errorf("the server use charset with id: %d which is not supported by the driver", conn.tcpNego.ServerCharset)
+	// }
 	conn.session.StrConv = conn.sStrConv
 	conn.nStrConv = converters.NewStringConverter(conn.tcpNego.ServernCharset)
-	if conn.nStrConv == nil {
-		return fmt.Errorf("the server use ncharset with id: %d which is not supported by the driver", conn.tcpNego.ServernCharset)
-	}
+	// if conn.nStrConv == nil {
+	// 	return fmt.Errorf("the server use ncharset with id: %d which is not supported by the driver", conn.tcpNego.ServernCharset)
+	// }
 	conn.tcpNego.ServerFlags |= 2
 	tracer.Print("Data Type Negotiation")
 	conn.dataNego = buildTypeNego(conn.tcpNego, conn.session)
