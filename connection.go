@@ -6,10 +6,11 @@ import (
 	"database/sql/driver"
 	"errors"
 	"fmt"
-	"github.com/sijms/go-ora/advanced_nego"
-	"github.com/sijms/go-ora/converters"
-	"github.com/sijms/go-ora/network"
 	"strconv"
+
+	"github.com/aitrics/go-ora/advanced_nego"
+	"github.com/aitrics/go-ora/converters"
+	"github.com/aitrics/go-ora/network"
 )
 
 type ConnectionState int

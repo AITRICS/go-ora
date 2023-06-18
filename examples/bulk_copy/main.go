@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	go_ora "github.com/sijms/go-ora/v2"
 	"log"
 	"os"
 	"time"
+
+	go_ora "github.com/aitrics/go-ora/v2"
 )
 
 func createTable(conn *go_ora.Connection) error {

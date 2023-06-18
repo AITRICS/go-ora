@@ -4,11 +4,12 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	go_ora "github.com/sijms/go-ora/v2"
 	"math/rand"
 	"os"
 	"sync"
 	"time"
+
+	go_ora "github.com/aitrics/go-ora/v2"
 )
 
 func createTable(conn *sql.DB) error {
