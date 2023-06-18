@@ -3,9 +3,6 @@ package go_ora
 import (
 	"errors"
 	"fmt"
-	"github.com/sijms/go-ora/v2/advanced_nego"
-	"github.com/sijms/go-ora/v2/network"
-	"github.com/sijms/go-ora/v2/trace"
 	"io/ioutil"
 	"net"
 	"net/url"
@@ -16,6 +13,10 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/sijms/go-ora/v2/advanced_nego"
+	"github.com/sijms/go-ora/v2/network"
+	"github.com/sijms/go-ora/v2/trace"
 )
 
 type PromotableTransaction int
@@ -270,7 +271,7 @@ func getCharsetID(charset string) (int, error) {
 		//"KO16KSC5601" : 840,
 		//"KO16DBCS" : 842,
 		//"KO16KSCCS" : 845,
-		//"KO16MSWIN949" : 846,
+		"KO16MSWIN949":      0x34E,
 		"ZHS16CGB231280":    0x352,
 		"ZHS16MACCGB231280": 0x353,
 		"ZHS16GBK":          0x354,
