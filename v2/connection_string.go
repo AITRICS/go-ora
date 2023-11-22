@@ -268,7 +268,7 @@ func getCharsetID(charset string) (int, error) {
 		//"JA16MACSJIS" : 836,
 		//"JA16EUCTILDE" : 837,
 		//"JA16SJISTILDE" : 838,
-		//"KO16KSC5601" : 840,
+		"KO16KSC5601": 0x34E,
 		//"KO16DBCS" : 842,
 		//"KO16KSCCS" : 845,
 		"KO16MSWIN949":      0x34E,
