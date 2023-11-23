@@ -25206,7 +25206,12 @@ func NewStringConverter(langID int) IStringConverter {
 			dReplace:  63,
 		}
 	default:
-		return nil
+		return &StringConverter{
+			LangID:    langID,
+			CharWidth: 2,
+			eReplace:  65533,
+			dReplace:  63,
+		}
 	}
 	//fileName := fmt.Sprintf("glb/lx20%x.json", LangID)
 	//jsonFile, err := os.Open(fileName)
